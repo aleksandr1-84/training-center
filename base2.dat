@@ -1,0 +1,10 @@
+    {
+    "personName": "Surname5",
+    "department": "Financier",
+    "projects":
+      {
+        "projectName": "Kursovoi",
+        "customer": "Microsoft",
+        "manager": "Sidorov"
+      }
+    }
