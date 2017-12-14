@@ -1,0 +1,18 @@
+zuul:
+    routes:
+        example:
+            path: /postman-echo/**
+            serviceId: postman-echo
+            stripPrefix: true 
+server:
+  port: 8080  
+spring:
+  application:
+    name: "projectexample"
+    
+postman-echo.ribbon:
+  listOfServers: ${POSTMAN_ECHO_URL}
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+  MaxAutoRetries: 6
+  MaxAutoRetriesNextServer: 6
