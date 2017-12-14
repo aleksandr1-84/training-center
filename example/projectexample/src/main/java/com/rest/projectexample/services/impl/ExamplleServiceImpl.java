@@ -14,6 +14,7 @@ public class ExamplleServiceImpl implements ExamplleService{
     public ExampleTO fillExampleGet(String key, String name, String info){
         ExampleTO exampleTO = new ExampleTO();
         exampleTO.setKey(key);
+        exampleTO.setName(name);
         exampleTO.setExampleInfo(info);
         return exampleTO;
     }
