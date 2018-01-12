@@ -1,0 +1,31 @@
+<h1>Bitcoin transactions CRUD app</h1>
+<div>
+  <h2>Add new transaction</h2>
+  <label for="sender">Sender</label>
+  <input type="text" name = "sender" id="sender" [(ngModel)]="addingTransaction.sender">
+  <label for="recipient">Recipient</label>
+  <input type="text" name = "recipient" id="recipient" [(ngModel)]="addingTransaction.recipient">
+  <label for="amount">Amount</label>
+  <input type="text" name = "amount" id="amount" [(ngModel)]="addingTransaction.amount">
+
+  <button (click)="onTransactionAdd()">Add transaction</button>
+</div>
+<div>
+  <h2>Transactions list</h2>
+  <table id="transactionsTable">
+    <tr>
+      <th>ID</th>
+      <th>Sender</th>
+      <th>Recipient</th>
+      <th>Amount</th>
+    </tr>
+    <tr *ngFor="let transaction of transactions" class="transactionRow">
+      <td>{{transaction.id}}</td>
+      <td><input [(ngModel)]="transaction.sender"></td>
+      <td><input [(ngModel)]="transaction.recipient"></td>
+      <td><input [(ngModel)]="transaction.amount"></td>
+      <td><button (click)="onTransactionEdit(transaction)">Save</button></td>
+      <td><a href="#" (click)="onTransactionDelete(transaction)">Delete</a></td>
+    </tr>
+  </table>
+</div>
