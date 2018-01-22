@@ -1,0 +1,21 @@
+<div>
+  <h2>NEW SONG</h2>
+  <label for="name">Song name</label>
+  <input type="text" name = "name" id="name" [(ngModel)]="newSong.name">
+  <button (click)="onSongAdd()">Add new song</button>
+</div>
+<div>
+<h1>ALL SONGS</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor="let song of songs" class="songRow" >
+    <td>{{song.id}}</td>
+    <td><input [(ngModel)]="song.name"></td>
+    <td><a href="#" (click)="onSongDelete(song)">Delete song</a></td>
+    <td><button (click)="onSongEdit(song)">Edit song</button></td>
+  </tr>
+</table>
+</div>
